@@ -8,10 +8,10 @@ app.get("/", function(req, res) {
 	res.render("index");
 });
 
-// app.listen(process.env.PORT, process.env.IP, function(){
-//    console.log("Server has started");
-// });
-
-app.listen(3000, function() {
-  console.log("server started");
+app.listen(process.env.PORT, process.env.IP, function(){
+   console.log("Server has started");
 });
+
+// app.listen(3000, function() {
+//   console.log("server started");
+// });
