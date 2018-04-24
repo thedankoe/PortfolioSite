@@ -29,10 +29,6 @@ body {
 				 0px 18px 23px rgba(0,0,0,0.3);
 }
 
-/* #heroHeader span {
-	color: #dc1d6d;
-} */
-
 #heroHeader h1 {
 	font-size: 4rem;
 }
@@ -126,10 +122,17 @@ body {
 #expertise h3 {
 	font-weight: 400;
 	font-size: 2.7rem;
+	padding-top: 2rem;
 }
 
 #expertise h4 {
+	font-weight: 400;
+	font-size: 2rem;
+}
 
+#expertise ul {
+	list-style-type: none;
+	padding: 0;
 }
 
 .skillbar {
@@ -184,47 +187,18 @@ body {
 	margin-top: 4rem;
 	padding-top: 8rem;
 	padding-bottom: 40px;
-	background: #232526;  /* fallback for old browsers */
-	background: -webkit-linear-gradient(to right, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background-color: #5B86E5;
+	color: white;
 	-webkit-clip-path: polygon(100% 100%, 50% 100%, 0 100%, 0 0, 50% 10%, 100% 0);
 	clip-path: polygon(100% 100%, 50% 100%, 0 100%, 0 0, 50% 10%, 100% 0);
 }
 
-.td-form {
-  color:#ebf4e7;
-  max-width:750px;
-  margin:1em auto 1em;
-}
-
 .td-form-wrapper {
-  background-color:rgba(20,28,34,0.45);
-  margin:1em 0 1em;
-  border:solid 1px rgba(255,255,255,0.65);
+	width: 80%;
 }
 
-.td-form .form-control:focus {
-  box-shadow:inset 0 1px 1px rgba(255,255,255,0.69),0 0 10px #36D1DC;
-}
-
-.td-form .btn:not(:disabled):not(.disabled) {
-  margin:1.8em 0 .8em;
-}
-
-.td-form .form-control {
-  background-color:rgba(0,0,0,0.45);
-  border:1px solid rgba(176, 176, 176, 0.4);
-  color:white;
-  padding-left:1.8em;
-}
-
-.td-form .icon.align-self-center {
-  left:1.5em;
-  position:relative;
-}
-
-.td-form label {
-  margin-left:1em;
+#contact i {
+	padding-right: 5px;
 }
 
 /*FOOTER*/
@@ -251,19 +225,11 @@ footer img {
 	#heroHeader p {
 		font-size: 1.2rem;
 	}
-}
 
-@media only screen and (max-width: 700px) {
-	.modal-content {
-		width: 100%;
+	#expertise h3 {
+		padding-top: 4rem;
 	}
 }
-
-@media only screen and (max-width: 576px) {
-	#aboutMe {
-		margin-left: 1rem;
-		margin-right: 1rem;
-	}
 
 @media only screen and (max-width: 500px) {
 	#heroHeader h1 {
@@ -278,9 +244,3 @@ footer img {
 		font-size: 1.5rem;
 	}
 }
-
-/* colors scheme
-#252839 dark blue
-#677077 grey
-#b5b5b7 light grey
-#f2b632 orange accent
