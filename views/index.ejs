@@ -157,9 +157,10 @@
 	<div class="td-form">
 		<div class="row td-form-wrapper mx-auto">
 			<div class="col">
-				<form id="contact-form" class="td-form-wrapper mx-auto">
+				<form method="POST" action="/" id="contact-form" class="td-form-wrapper mx-auto">
 					<h1 class="text-center">Contact Me</h1>
-					<div class="alert">Your message has been sent</div>
+					
+					<div class="alert"><%= locals.msg %></div>
 					<div class="form-group">
 						<div class="col-md-12"><label for="name">Your Name *</label>
 							<div class="d-flex"><i class="icon ion-person align-self-center"></i>

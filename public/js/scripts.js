@@ -49,4 +49,23 @@ $(document).ready(function() {
 	});
 }
 
+	// Listen for form submit
+	document.getElementById('contact-form').addEventListener('submit', submitForm);
+
+	// Submit form
+	function submitForm(event) {
+		event.preventDefault();
+
+		// Show alert
+		document.querySelector('.alert').style.display = 'block';
+
+		// Hide alert after 3 seconds
+		setTimeout(function() {
+			document.querySelector('.alert').style.display = 'none';
+		}, 3000);
+
+		// Clear form
+		document.getElementById('contact-form').reset();
+	}
+
 });
