@@ -155,53 +155,40 @@
 <!-- CONTACT -->
 <section id="contact">
 	<div class="td-form">
-			<div class="row td-form-wrapper mx-auto">
-					<div class="col td-glass">
-							<form class="td-form-wrapper mx-auto">
-									<h1 class="text-center">Contact Me</h1>
-									<div class="form-group">
-											<div class="col-md-12"><label for="name">Your Name *</label>
-												<div class="d-flex"><i class="icon ion-person align-self-center"></i>
-												<input class="form-control d-flex" type="text" name="name" required="" placeholder="First &amp; Last" autocomplete="off">
-												</div>
-											</div>
-									</div>
-									<div class="form-group">
-											<div class="col-md-12"><label for="email">Email Address *</label>
-												<div class="d-flex"><i class="icon ion-ios-email align-self-center"></i>
-												<input class="form-control" type="text" name="phone" required="" placeholder="email@gmail.com" autocomplete="off" inputmode="email">
-												</div>
-											</div>
-									</div>
-									<div class="form-group">
-											<div class="col-md-12"><label for="phone">Phone (optional)</label>
-												<div class="d-flex td-input-container"><i class="icon ion-ios-telephone align-self-center"></i>
-												<input class="form-control" type="text" name="phone" autocomplete="off" inputmode="tel" placeholder="555-555-5555">
-												</div>
-											</div>
-									</div>
-									<div class="form-group">
-											<div class="col-md-12"><label for="subject">Subject: * </label>
-												<div class="d-flex td-input-container"><i class="icon ion-ios-information align-self-center"></i>
-												<input class="form-control" type="text" name="subject" required="" autocomplete="off" placeholder="What are you contacting me about?">
-												</div>
-											</div>
-									</div>
-									<div class="form-group">
-											<div class="col-md-12"><label for="message">Message Details *</label>
-												<div class="d-flex td-input-container"><i class="icon ion-android-create align-self-center"></i>
-												<textarea class="form-control" rows="6" cols="50" name="message" placeholder="Add meaningful message here"></textarea>
-												</div>
-											</div>
-									</div>
-									<div class="form-group">
-										<div class="col-md-12">
-										<button class="btn btn-dark float-right" type="submit">Send message!</button>
-										</div>
-									</div>
-							</form>
+		<div class="row td-form-wrapper mx-auto">
+			<div class="col">
+				<form id="contact-form" class="td-form-wrapper mx-auto">
+					<h1 class="text-center">Contact Me</h1>
+					<div class="alert">Your message has been sent</div>
+					<div class="form-group">
+						<div class="col-md-12"><label for="name">Your Name *</label>
+							<div class="d-flex"><i class="icon ion-person align-self-center"></i>
+							<input class="form-control d-flex" type="text" name="name" id="name" required>
+							</div>
+						</div>
 					</div>
+					<div class="form-group">
+						<div class="col-md-12"><label for="email">Email Address *</label>
+							<div class="d-flex"><i class="icon ion-ios-email align-self-center"></i>
+							<input class="form-control" type="email" name="email" id="email" required>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-md-12"><label for="message">Message Details *</label>
+							<div class="d-flex td-input-container"><i class="icon ion-android-create align-self-center"></i>
+							<textarea class="form-control" rows="6" cols="50" name="message" id="message" required></textarea>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-md-12">
+						<button class="btn btn-dark float-right" type="submit">Send message!</button>
+						</div>
+					</div>
+				</form>
 			</div>
+		</div>
 	</div>
 </section>
 

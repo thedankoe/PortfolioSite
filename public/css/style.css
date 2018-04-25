@@ -201,6 +201,15 @@ body {
 	padding-right: 5px;
 }
 
+.alert {
+	text-align: center;
+	padding: 10px;
+	background-color: #79c879;
+	margin-bottom: 10px;
+	display: none;
+	transition: 0.3s;
+}
+
 /*FOOTER*/
 
 footer {
