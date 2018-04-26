@@ -59,15 +59,13 @@ app.post('/', (req, res) => {
       }
       console.log('Email sent');
       console.log(info);
-
-      // res.render('index');
   });
 });
 
-// app.listen(process.env.PORT, process.env.IP, function(){
-//    console.log("Server has started");
-// });
-
-app.listen(3000, () => {
-  console.log("server started");
+app.listen(process.env.PORT, process.env.IP, function(){
+   console.log("Server has started");
 });
+
+// app.listen(3000, () => {
+//   console.log("server started");
+// });
