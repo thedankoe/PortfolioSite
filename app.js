@@ -59,6 +59,7 @@ app.post('/', (req, res) => {
       }
       console.log('Email sent');
       console.log(info);
+      res.render('index');
   });
 });
 
