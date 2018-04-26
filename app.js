@@ -31,12 +31,15 @@ app.post('/', (req, res) => {
   `;
   // create reusable transporter object using the default SMTP transport
   let transporter = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
-    port: 587,
+    service: 'gmail',
     secure: false,
+    port: 25,
     auth: {
         user: 'thedankoe@gmail.com', 
-        pass: 'Prometheus88' 
+        pass: 'Prometheus88'
+    },
+    tls: {
+      rejectUnauthorized: false
     }
   });
 
@@ -45,7 +48,7 @@ app.post('/', (req, res) => {
       from: '"Nodemailer Contact" <thedankoe@gmail.com>', // sender address
       to: 'thedankoe@gmail.com', // list of receivers
       subject: 'New Inquiry', // Subject line
-      text: '', // plain text body
+      text: 'Hello World?', // plain text body
       html: output // html body
   };
 
@@ -54,14 +57,10 @@ app.post('/', (req, res) => {
       if (error) {
           return console.log(error);
       }
-      console.log('Message sent: %s', info.messageId);
-      // Preview only available when sending through an Ethereal account
-      console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+      console.log('Email sent');
+      console.log(info);
 
-      res.render('index', {msg: 'Email has been sent'});
-
-      // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
-      // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
+      // res.render('index');
   });
 });
 

@@ -54,8 +54,6 @@ $(document).ready(function() {
 
 	// Submit form
 	function submitForm(event) {
-		event.preventDefault();
-
 		// Show alert
 		document.querySelector('.alert').style.display = 'block';
 
