@@ -74,6 +74,6 @@ app.post('/', (req, res) => {
 //    console.log("Server has started");
 // });
 
-server.listen(port, () => {
+server.listen(port, process.env.IP, () => {
   console.log('Server started on http://localhost:' + port);
 })
