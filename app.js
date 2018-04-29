@@ -1,21 +1,23 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const nodemailer = require('nodemailer');
-
+const path = require("path");
+const express = require("express");
 const app = express();
-
-// View engine setup
-app.set('view engine', 'ejs');
-
-// Static folder
-app.use(express.static(__dirname + '/public'));
+const bodyParser = require('body-parser');
+const server = require('http').createServer(app);
+const nodemailer = require('nodemailer');
+const auth =  require('./config/secrets');
+const port = process.env.PORT || 8081;
 
 //Body parser middleware
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+// app.use(bodyParser.json());
+// View engine setup
+app.set('view engine', 'ejs');
+// Static folder
+app.use(express.static(__dirname + '/public'));
 
+// MAIN ROUTE
 app.get('/', (req, res) => {
-	res.render("index");
+	res.render('index');
 });
 
 app.post('/', (req, res) => {
@@ -29,44 +31,49 @@ app.post('/', (req, res) => {
     <h3>Message</h3>
     <p>${req.body.message}</p>
   `;
-  // create reusable transporter object using the default SMTP transport
+
   let transporter = nodemailer.createTransport({
-    service: 'gmail',
-    secure: false,
-    port: 25,
-    auth: {
-        user: 'thedankoe@gmail.com', 
-        pass: 'Prometheus88'
-    },
-    tls: {
-      rejectUnauthorized: false
-    }
+      host: 'box5667.bluehost.com',
+      port: 465,
+      secure: true, // true for 465, false for other ports
+      auth: {
+          user: auth.emailUser,
+          pass: auth.emailPass
+      },
+      tls: {
+        rejectUnauthorized: false
+      }
   });
 
   // setup email data with unicode symbols
   let mailOptions = {
-      from: '"Nodemailer Contact" <thedankoe@gmail.com>', // sender address
+      from: '"Nodemailer" <dan@thedankoe.com>', // sender address
       to: 'thedankoe@gmail.com', // list of receivers
       subject: 'New Inquiry', // Subject line
-      text: 'Hello World?', // plain text body
+      text: output, // plain text body
       html: output // html body
   };
 
   // send mail with defined transport object
   transporter.sendMail(mailOptions, (error, info) => {
+    
       if (error) {
           return console.log(error);
+      } else {
+        console.log(req.body);
+        console.log('Message sent: %s', info.messageId);
+        console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+  
+        res.render('index');
       }
-      console.log('Email sent');
-      console.log(info);
-      res.render('index');
+
   });
 });
 
-app.listen(process.env.PORT, process.env.IP, function(){
-   console.log("Server has started");
-});
-
-// app.listen(3000, () => {
-//   console.log("server started");
+// app.listen(process.env.PORT, process.env.IP, function(){
+//    console.log("Server has started");
 // });
+
+server.listen(port, () => {
+  console.log('Server started on http://localhost:' + port);
+})

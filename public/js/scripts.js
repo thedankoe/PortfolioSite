@@ -61,9 +61,6 @@ $(document).ready(function() {
 		setTimeout(function() {
 			document.querySelector('.alert').style.display = 'none';
 		}, 3000);
-
-		// Clear form
-		document.getElementById('contact-form').reset();
 	}
 
 });
