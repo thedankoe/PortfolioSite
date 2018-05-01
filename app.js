@@ -2,7 +2,6 @@ const path = require("path");
 const express = require("express");
 const app = express();
 const bodyParser = require('body-parser');
-const server = require('http').createServer(app);
 const nodemailer = require('nodemailer');
 const auth =  require('./config/secrets');
 const port = process.env.PORT || 8081;
