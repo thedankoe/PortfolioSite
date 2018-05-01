@@ -146,6 +146,15 @@ body {
 	padding: 0;
 }
 
+#expertise a {
+	color: black;
+	text-decoration: none;
+}
+
+#expertise a:hover {
+	color: white;
+}
+
 .skillbar {
 	position:relative;
 	display:block;
